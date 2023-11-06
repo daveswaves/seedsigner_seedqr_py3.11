@@ -1,0 +1,48 @@
+Seed words:
+
+['win','between','crucial','lemon','tonight','owner','height','shift','planet','devote','will','retreat','duck','cash','civil','elbow','melody','rare','glide','deliver','labor','refuse','write','front']
+
+fingerprint: 0b2834d5
+
+Xpub details:
+
+zpub6rsg GM38r2KLd...
+
+cd ~/daveswaves_seedsigner && code .
+cd ~/python_venv/seedsigner_seedqr_py3.11/ && code .
+
+###########################################################
+Xpub References:
+
+Documentation files: docs/dice_verification.md, docs/recovery.md & README.md
+These have 3 useful links:
+- https://github.com/diybitcoinhardware/embit/blob/master/docs/api/bip32.md#detect_version
+- https://youtube.com/watch?v=JCaC5DG2HTM (Stepan of `embit`)
+- https://youtu.be/LPqvdQ2gSzs (SeedSigner demos XPUB export via animated QR)
+
+Python scripts:
+tests/test_embit_utils.py
+tests/test_flows_settings.py
+tests/test_controller.py
+tests/screenshot_generator/generator.py
+tests/test_decodepsbtqr.py
+tests/test_settingsqr_decoder.py
+tests/test_settings.py
+tests/test_encodepsbtqr.py
+tests/test_flows_seed.py
+
+src/seedsigner/helpers/embit_utils.py
+src/seedsigner/gui/screens/seed_screens.py
+src/seedsigner/models/encode_qr.py
+src/seedsigner/models/psbt_parser.py
+src/seedsigner/models/qr_type.py
+src/seedsigner/models/settings_definition.py
+src/seedsigner/models/decode_qr.py
+src/seedsigner/models/seed.py
+src/seedsigner/views/psbt_views.py
+src/seedsigner/views/tools_views.py
+src/seedsigner/views/seed_views.py
+
+###########################################################
+
+grep -niR "xpub" --exclude-dir=zzz --exclude="*zzz*"

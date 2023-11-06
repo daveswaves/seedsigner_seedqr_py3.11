@@ -1,0 +1,132 @@
+
+Working TOWARDS operations:
+--------------------------------------------------------------------
+
+>> Export Xpub
+
+   views/seed_views.py
+   
+   class SeedOptionsView() [Ln 428]
+   
+      Displays "Export Xpub" option:
+   
+      if EXPORT_XPUB selected goto SeedExportXpubSigTypeView() class [Ln 514]
+      
+   class SeedExportXpubSigTypeView() [Ln 572]
+   
+      Displays "Single Sig" option:
+   
+      if SINGLE_SIG selected goto SeedExportXpubScriptTypeView() class [Ln 597]
+   
+   class SeedExportXpubScriptTypeView() [Ln 605]
+   
+      Displays "Native Segwit" option:
+   
+      Final else statement [Ln 658] is triggered if SETTING__SCRIPT_TYPES == "Native Segwit"
+      goto SeedExportXpubCoordinatorView() class [Ln 700]
+   
+   class SeedExportXpubCoordinatorView() [Ln 700]
+   
+      Displays "Sparrow" option:
+      
+      goto SeedExportXpubWarningView() class if any COORDINATOR select ("BlueWallet", "Nunchuk", "Sparrow" etc) [Ln 730]
+      
+   class SeedExportXpubWarningView() [Ln 737]
+   
+      Displays "Xpub can be used to view all future transactions. I Understand" option:
+      
+      goto SeedExportXpubDetailsView() class if "I Understand" selected [Ln 770]
+
+   class SeedExportXpubDetailsView() [Ln 779]
+   
+      Calculate xpub
+      
+      
+
+
+
+
+
+
+
+>> Generate XPUB from private key.
+
+   Links: https://github.com/daveswaves/seedsigner/blob/dev/docs/dice_verification.md
+
+
+
+>> Display QR code for XPUB.
+
+   a. Export Xpub
+   b. Single Sig
+   c. Native Segwit
+   d. Sparrow
+   e. Xpub can be used to view all future transactions. I Understand
+   f. Fingerprint
+      3c5391ce
+      Derivation
+      m/84'/0'/0'
+      Xpub
+      zpub6rfF8AqCLq2hop...
+      Export Xpub
+   
+   Animated QR displays
+
+>> Create test program to display seed phrase from a scanned QR code.
+
+>> Create test program to input animated PSBT QR code and display data.
+
+>> Create test program to display animated QR code for a signed PSBT.
+
+
+Operations achieved so far:
+--------------------------------------------------------------------
+
+>> 'test_seedqr.py' generates a 16 or 32 random bytes (12 or 24 word seed phrase)
+   and uses this to generate a bip39 mnemonic (seed phrase).
+   
+   The 12 or 24 words are converted to 4 digit numbers (corresponding to the bip39 wordlist) and concatenated.
+   48 digits for 12 words, 96 digits for 24 words.
+   
+   It then encodes this as a QR code and creates an image which it displays.
+   
+   Finally, the QR code image is converted back to 12 or 24 word seed phrase.
+
+
+useful grep:
+$ cd ~/daveswaves_seedsigner && grep -niR "Export Xpub --exclude-dir=docs"
+
+
+grep -niR "\$zero_vat_ids" --exclude-dir=zzz --exclude="*zzz*"
+grep -niR "cls_colour_profit" --exclude="*2023*" --exclude="*zzz*"
+
+
+
+elif self.qr_type == QRType.XPUB:
+https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/models/encode_qr.py#L63
+
+
+https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/tests/test_encodepsbtqr.py
+
+
+
+
+
+
+
+SeedSigner Links
+================
+https://github.com/SeedSigner/seedsigner/blob/0.7.0/src/seedsigner/models/decode_qr.py
+https://github.com/SeedSigner/seedsigner/blob/0.7.0/src/seedsigner/models/qr_type.py
+
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+The following does not appear to exist:
+
+QRType.JSON
+https://github.com/SeedSigner/seedsigner/blob/a109c80c92d7267e243595a80bcee212b4679fd0/src/seedsigner/models/decode_qr.py#L277
+
+class QRType
+https://github.com/SeedSigner/seedsigner/blob/a109c80c92d7267e243595a80bcee212b4679fd0/src/seedsigner/models/qr_type.py
