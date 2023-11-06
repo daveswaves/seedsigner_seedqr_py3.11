@@ -4,42 +4,54 @@ Working TOWARDS operations:
 
 >> Export Xpub
 
-   views/seed_views.py
-   
-   class SeedOptionsView() [Ln 428]
+   # https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/views/seed_views.py#L428
+   class SeedOptionsView()
    
       Displays "Export Xpub" option:
    
       if EXPORT_XPUB selected goto SeedExportXpubSigTypeView() class [Ln 514]
       
-   class SeedExportXpubSigTypeView() [Ln 572]
+   # https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/views/seed_views.py#L572
+   class SeedExportXpubSigTypeView()
    
       Displays "Single Sig" option:
    
       if SINGLE_SIG selected goto SeedExportXpubScriptTypeView() class [Ln 597]
    
-   class SeedExportXpubScriptTypeView() [Ln 605]
+   # https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/views/seed_views.py#L605
+   class SeedExportXpubScriptTypeView()
    
       Displays "Native Segwit" option:
    
       Final else statement [Ln 658] is triggered if SETTING__SCRIPT_TYPES == "Native Segwit"
       goto SeedExportXpubCoordinatorView() class [Ln 700]
    
-   class SeedExportXpubCoordinatorView() [Ln 700]
+   # https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/views/seed_views.py#L700
+   class SeedExportXpubCoordinatorView()
    
       Displays "Sparrow" option:
       
       goto SeedExportXpubWarningView() class if any COORDINATOR select ("BlueWallet", "Nunchuk", "Sparrow" etc) [Ln 730]
       
-   class SeedExportXpubWarningView() [Ln 737]
+   # https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/views/seed_views.py#L737
+   class SeedExportXpubWarningView()
    
       Displays "Xpub can be used to view all future transactions. I Understand" option:
       
       goto SeedExportXpubDetailsView() class if "I Understand" selected [Ln 770]
 
-   class SeedExportXpubDetailsView() [Ln 779]
+   # https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/views/seed_views.py#L779
+   class SeedExportXpubDetailsView()
    
       Calculate xpub
+
+      goto SeedExportXpubQRDisplayView()
+
+   # https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/views/seed_views.py#L856
+   class SeedExportXpubQRDisplayView()
+
+      runs QRDisplayScreen - the location of this class is:
+      https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/gui/screens/screen.py#L659
       
       
 

@@ -1,4 +1,6 @@
 '''
+$ python src/display_seedqr.py
+
 https://github.com/SeedSigner/seedsigner/blob/dev/tests/test_seedqr.py#L24
 
 INFO:
