@@ -56,6 +56,8 @@ class SeedExportXpubQRDisplayView() <sup>[views/seed_views.py#L856](https://gith
 runs QRDisplayScreen - the location of this class is: [<a href="https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/gui/screens/screen.py#L659">gui/screens/screen.py#L659</a>]
 </pre>
 
+
+<!--
 ```geojson
 {
   "type": "FeatureCollection",
@@ -82,6 +84,7 @@ runs QRDisplayScreen - the location of this class is: [<a href="https://github.c
   ]
 }
 ```
+-->
 
 <!--
 <a href=""></a>
