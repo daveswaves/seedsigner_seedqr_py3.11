@@ -38,16 +38,22 @@ def XpubQrEncoder():
     # Convert xpub to zpub
     xpub_base58 = xpub.to_string(version=version)
 
+    # https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/models/encode_qr.py#L382
     xpubstring = "[{}{}]{}".format(
         hexlify(fingerprint).decode('utf-8'),
         derivation[1:],
         xpub_base58
     )
-
-
+    
     pprint(xpubstring)
-    '''
-    '''
+
+    def _create_parts():
+        parts = []
+        parts.append(xpubstring)
+        pprint(parts)
+
+    _create_parts()
+
 
 
 XpubQrEncoder()
