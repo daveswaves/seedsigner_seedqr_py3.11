@@ -37,7 +37,7 @@ class SeedExportXpubDetailsView() [views/seed_views.py#L779](https://github.com/
 
     Calculate xpub
 
-    goto SeedExportXpubQRDisplayView()
+    goto SeedExportXpubQRDisplayView(views/seed_views.py#L844) [](https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/views/seed_views.py#L844)
 
 class SeedExportXpubQRDisplayView() [views/seed_views.py#L856](https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/views/seed_views.py#L856)
 
