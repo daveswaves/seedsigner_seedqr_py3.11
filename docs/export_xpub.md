@@ -12,9 +12,9 @@ QR.qrimage() <a href="https://github.com/SeedSigner/seedsigner/blob/dev/src/seed
 EncodeQR <a href="https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/models/encode_qr.py#L25">25</a> is referenced in the following:
 
 * tests/test_encodepsbtqr.py <a href="https://github.com/SeedSigner/seedsigner/blob/dev/tests/test_encodepsbtqr.py#L15">15</a> <a href="https://github.com/SeedSigner/seedsigner/blob/dev/tests/test_encodepsbtqr.py#L30">30</a> <a href="https://github.com/SeedSigner/seedsigner/blob/dev/tests/test_encodepsbtqr.py#L66">66</a> <a href="https://github.com/SeedSigner/seedsigner/blob/dev/tests/test_encodepsbtqr.py#L77">77</a> <a href="https://github.com/SeedSigner/seedsigner/blob/dev/tests/test_encodepsbtqr.py#L86">86</a> <a href="https://github.com/SeedSigner/seedsigner/blob/dev/tests/test_encodepsbtqr.py#L98">98</a>
-* tests/test_seedqr.py <a href="">20</a>
-* views/psbt_views.py <a href="">501</a>
-* views/tools_views.py <a href="">698</a>
-* views/seed_views.py <a href="">880</a> <a href="">1389</a> <a href="">1424</a> <a href="">2067</a>
+* tests/test_seedqr.py <a href="https://github.com/SeedSigner/seedsigner/blob/dev/tests/test_seedqr.py#L20">20</a>
+* views/psbt_views.py <a href="https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/views/psbt_views.py#L501">501</a>
+* views/tools_views.py <a href="https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/views/tools_views.py#L698">698</a>
+* views/seed_views.py <a href="https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/views/seed_views.py#L880">880</a> <a href="https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/views/seed_views.py#L1389">1389</a> <a href="https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/views/seed_views.py#L1424">1424</a> <a href="https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/views/seed_views.py#L2067">2067</a>
 </pre>
 
