@@ -34,9 +34,10 @@ class SeedExportXpubWarningView() [views/seed_views.py#L737](https://github.com/
     goto SeedExportXpubDetailsView() class if "I Understand" selected [Ln 770](https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/views/seed_views.py#L770)
 
 class SeedExportXpubDetailsView() [views/seed_views.py#L779](https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/views/seed_views.py#L779)
+
 <pre>Calculate xpub
 
-goto SeedExportXpubQRDisplayView(views/seed_views.py#L844) [](https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/views/seed_views.py#L844)</pre>
+goto SeedExportXpubQRDisplayView(views/seed_views.py#L844) <a href="https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/views/seed_views.py#L844">views/seed_views.py#L844</a></pre>
 
 class SeedExportXpubQRDisplayView() [views/seed_views.py#L856](https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/views/seed_views.py#L856)
 
