@@ -51,7 +51,7 @@ goto SeedExportXpubQRDisplayView() <a href="https://github.com/SeedSigner/seedsi
 </pre>
 
 
-class SeedExportXpubQRDisplayView() <pre><a href="https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/views/seed_views.py#L856">views/seed_views.py#L856</a></pre>
+class SeedExportXpubQRDisplayView() <code><a href="https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/views/seed_views.py#L856">views/seed_views.py#L856</a></code>
 <pre>
 runs QRDisplayScreen - the location of this class is: <a href="https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/gui/screens/screen.py#L659">gui/screens/screen.py#L659</a>
 </pre>
