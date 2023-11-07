@@ -27,18 +27,22 @@ class SeedExportXpubCoordinatorView() [views/seed_views.py#L700](https://github.
 
     goto SeedExportXpubWarningView() class if any COORDINATOR select ("BlueWallet", "Nunchuk", "Sparrow" etc) [Ln 730](https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/views/seed_views.py#L730)
 
+
 class SeedExportXpubWarningView() [views/seed_views.py#L737](https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/views/seed_views.py#L737)
+<pre>
+Displays "Xpub can be used to view all future transactions. I Understand" option:
 
-    Displays "Xpub can be used to view all future transactions. I Understand" option:
+goto SeedExportXpubDetailsView() class if "I Understand" selected <a href="https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/views/seed_views.py#L770">Ln 770</a>
+</pre>
 
-    goto SeedExportXpubDetailsView() class if "I Understand" selected [Ln 770](https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/views/seed_views.py#L770)
 
 class SeedExportXpubDetailsView() [views/seed_views.py#L779](https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/views/seed_views.py#L779)
 <pre>
 Calculate xpub
 
-goto SeedExportXpubQRDisplayView() <a href="https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/views/seed_views.py#L844" target="_blank">views/seed_views.py#L844</a>
+goto SeedExportXpubQRDisplayView() <a href="https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/views/seed_views.py#L844">views/seed_views.py#L844</a>
 </pre>
+
 
 class SeedExportXpubQRDisplayView() [views/seed_views.py#L856](https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/views/seed_views.py#L856)
 <pre>
