@@ -2,7 +2,7 @@
 
 ## Export Xpub
 
-class SeedOptionsView() <sub>[views/seed_views.py#L428](https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/views/seed_views.py#L428)</sub>
+class SeedOptionsView() <sup>[views/seed_views.py#L428](https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/views/seed_views.py#L428)</sup>
 <pre>
 Displays "Export Xpub" option:
 
