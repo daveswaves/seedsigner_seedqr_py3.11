@@ -31,7 +31,7 @@ class SeedExportXpubCoordinatorView() [views/seed_views.py#L700](https://github.
 <pre>
 Displays "Sparrow" option:
 
-goto SeedExportXpubWarningView() class if any COORDINATOR select ("BlueWallet", "Nunchuk", "Sparrow" etc) <a href="https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/views/seed_views.py#L730">Ln 730</a>)
+goto SeedExportXpubWarningView() class if any COORDINATOR select ("BlueWallet", "Nunchuk", "Sparrow" etc) <a href="https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/views/seed_views.py#L730">Ln 730</a>
 </pre>
 
 
