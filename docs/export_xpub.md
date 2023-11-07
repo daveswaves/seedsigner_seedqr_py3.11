@@ -28,3 +28,10 @@ EncodeQR <a href="https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsign
 * views/seed_views.py <a href="https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/views/seed_views.py#L880">880</a> <a href="https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/views/seed_views.py#L1389">1389</a> <a href="https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/views/seed_views.py#L1424">1424</a> <a href="https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/views/seed_views.py#L2067">2067</a>
 </pre>
 
+## NOTES
+
+If qr_type is 'Xpub' <sup>[models/encode_qr.py#L63](https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/models/encode_qr.py#L63)</sup> in the `EncodeQR` class, call `XpubQrEncoder()` method and assign result to self.encoder.
+
+`next_part_image()` <sup>[125](https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/models/encode_qr.py#L125)</sup> method (`EncodeQR` class) is referenced in gui/screens/screen.py <sup>[754](https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/gui/screens/screen.py#L754)</sup> (`QRDisplayScreen` class).
+
+
