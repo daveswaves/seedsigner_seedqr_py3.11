@@ -47,7 +47,7 @@ class SeedExportXpubDetailsView() <sup>[views/seed_views.py#L779](https://github
 <pre>
 Calculate xpub
 
-goto SeedExportXpubQRDisplayView() [<a href="https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/views/seed_views.py#L844">views/seed_views.py#L844</a>]
+goto SeedExportXpubQRDisplayView() [<a href="https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/views/seed_views.py#L844">Ln 844</a>]
 </pre>
 
 
