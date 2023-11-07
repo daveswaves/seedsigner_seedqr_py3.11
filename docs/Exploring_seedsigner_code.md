@@ -10,7 +10,7 @@ if EXPORT_XPUB selected goto SeedExportXpubSigTypeView() class [<a href="https:/
 </pre>
 
 
-class SeedExportXpubSigTypeView() [views/seed_views.py#L572](https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/views/seed_views.py#L572)
+class SeedExportXpubSigTypeView() <sup>[views/seed_views.py#L572](https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/views/seed_views.py#L572)</sup>
 <pre>
 Displays "Single Sig" option:
 
@@ -18,7 +18,7 @@ if SINGLE_SIG selected goto SeedExportXpubScriptTypeView() class [<a href="https
 </pre>
 
 
-class SeedExportXpubScriptTypeView() [views/seed_views.py#L605](https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/views/seed_views.py#L605)
+class SeedExportXpubScriptTypeView() <sup>[views/seed_views.py#L605](https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/views/seed_views.py#L605)</sup>
 <pre>
 Displays "Native Segwit" option:
 
@@ -27,7 +27,7 @@ goto SeedExportXpubCoordinatorView() class [<a href="https://github.com/SeedSign
 </pre>
 
 
-class SeedExportXpubCoordinatorView() [views/seed_views.py#L700](https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/views/seed_views.py#L700)
+class SeedExportXpubCoordinatorView() <sup>[views/seed_views.py#L700](https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/views/seed_views.py#L700)</sup>
 <pre>
 Displays "Sparrow" option:
 
@@ -35,7 +35,7 @@ goto SeedExportXpubWarningView() class if any COORDINATOR select ("BlueWallet", 
 </pre>
 
 
-class SeedExportXpubWarningView() [views/seed_views.py#L737](https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/views/seed_views.py#L737)
+class SeedExportXpubWarningView() <sup>[views/seed_views.py#L737](https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/views/seed_views.py#L737)</sup>
 <pre>
 Displays "Xpub can be used to view all future transactions. I Understand" option:
 
@@ -43,7 +43,7 @@ goto SeedExportXpubDetailsView() class if "I Understand" selected [<a href="http
 </pre>
 
 
-class SeedExportXpubDetailsView() [views/seed_views.py#L779](https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/views/seed_views.py#L779)
+class SeedExportXpubDetailsView() <sup>[views/seed_views.py#L779](https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/views/seed_views.py#L779)</sup>
 <pre>
 Calculate xpub
 
@@ -51,7 +51,7 @@ goto SeedExportXpubQRDisplayView() [<a href="https://github.com/SeedSigner/seeds
 </pre>
 
 
-class SeedExportXpubQRDisplayView() [views/seed_views.py#L856](https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/views/seed_views.py#L856)
+class SeedExportXpubQRDisplayView() <sup>[views/seed_views.py#L856](https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/views/seed_views.py#L856)</sup>
 <pre>
 runs QRDisplayScreen - the location of this class is: [<a href="https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/gui/screens/screen.py#L659">gui/screens/screen.py#L659</a>]
 </pre>
