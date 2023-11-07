@@ -57,6 +57,5 @@ runs QRDisplayScreen - the location of this class is: <a href="https://github.co
 </pre>
 
 <!--
-[views/seed_views.py#L856](https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/views/seed_views.py#L856)
 <a href=""></a>
 -->
