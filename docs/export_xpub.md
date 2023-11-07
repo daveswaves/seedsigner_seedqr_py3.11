@@ -1,5 +1,15 @@
 # Export Xpub Animated QR-Code
 
+Required Scripts:
+* [helpers/qr.py](https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/helpers/qr.py)
+* [tests/test_seedqr.py](https://github.com/SeedSigner/seedsigner/blob/dev/tests/test_seedqr.py)
+* [models/encode_qr.py](https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/models/encode_qr.py)
+* [gui/screens/seed_screens.py](https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/gui/screens/seed_screens.py)
+* [tests/test_encodepsbtqr.py](https://github.com/SeedSigner/seedsigner/blob/dev/tests/test_encodepsbtqr.py)
+* [views/psbt_views.py](https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/views/psbt_views.py)
+* [views/tools_views.py](https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/views/tools_views.py)
+* [views/seed_views.py](https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/views/seed_views.py)
+
 <pre>
 QR.qrimage() <a href="https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/helpers/qr.py#L15">15</a> and QR.qrimage_io() <a href="https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/helpers/qr.py#L39">39</a> are referenced in the following:
 
