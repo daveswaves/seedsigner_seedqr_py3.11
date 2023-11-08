@@ -32,6 +32,6 @@ EncodeQR <a href="https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsign
 
 If qr_type is 'Xpub' [[models/encode_qr.py#L63](https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/models/encode_qr.py#L63)] in the `EncodeQR` class, call `XpubQrEncoder()` method and assign result to self.encoder.
 
-`next_part_image()` [[125](https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/models/encode_qr.py#L125)] method (`EncodeQR` class) is referenced in gui/screens/screen.py [[754](https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/gui/screens/screen.py#L754)] (`QRDisplayScreen` class).
+`EncodeQR.next_part_image()` [[125](https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/models/encode_qr.py#L125)] is only referenced once (`QRDisplayScreen` class): `gui/screens/screen.py` [[754](https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/gui/screens/screen.py#L754)]
 
 
