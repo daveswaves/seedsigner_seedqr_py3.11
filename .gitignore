@@ -1,0 +1,8 @@
+# .aliases
+# .gitignore
+poetry.lock
+NOTES
+__pycache__/
+pyzbar/
+urtypes/
+*.avi
