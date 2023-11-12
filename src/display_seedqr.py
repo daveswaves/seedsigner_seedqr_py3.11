@@ -40,7 +40,7 @@ from embit import bip39
 # from PIL import Image
 
 from helpers.qr import QR
-from models.decode_qr import DecodeQR, DecodeQRStatus
+# from models.decode_qr import DecodeQR, DecodeQRStatus
 from models.encode_qr import EncodeQR
 from models.qr_type import QRType
 
