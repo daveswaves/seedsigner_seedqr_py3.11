@@ -7,6 +7,8 @@ Stepan is a quantum physicist, bitcoin hacker from Munich, Germany.
 Generates bip39 seed, converts it to the root key, derives native segwit xpub,
 prints first 5 receiving addresses, parses PSBT transaction and signs it.
 '''
+
+import sys
 from pprint import pprint
 
 from embit import bip32, bip39
@@ -30,7 +32,9 @@ root = bip32.HDKey.from_seed(seed)
 # Derive and convert to pubkey
 xpub = root.derive("m/84h/0h/0h").to_public()
 # >>> xpub6DBRY8RRnUYBPMTnuVvmiiC2jGMVmeKy4db8ztQL82GwCEMdYGbeJ2w9VH1pGQJVyci45DgkgtFX4Ro6t8JNrfbDprZMBKf4bJVueZNk2to
-# print(xpub)
+print(xpub)
+
+sys.exit()
 
 # Generate native segwit descriptors.
 # You can use {0,1} for combined receive and change descriptors

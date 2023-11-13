@@ -14,6 +14,7 @@ opencv-python = "^4.6.0.66"
 Pillow = "^9.4.0"
 qrcode = "^7.3.1"
 six = "^1.16.0"
+# tk = "^0.1.0"
 
 # Install 'urtypes' & 'pyzbar' packages from GitHub repos
 # ****** MUST BE DONE IN VIRTUAL ENVIRONMENT (poetry shell) ******
