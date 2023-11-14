@@ -2,8 +2,9 @@
 python src/tk_oop_seedqr_animated.py
 '''
 
-# import sys
+import sys
 import os
+from pprint import pprint
 # import time
 from tkinter import Tk, Frame, Canvas, Entry, Label, Button
 from PIL import Image, ImageDraw, ImageFont, ImageTk
@@ -23,8 +24,54 @@ BG_COLOR = '#000'
 FILL_COLOR = '#0f0'
 TEXT_INPUT_BG_COLOR = '#fff'
 TEXT_INPUT_FG_COLOR = '#000'
-# SEED_PHRASE = 'obscure bone gas open exotic abuse virus bunker shuffle nasty ship dash'
-SEED_PHRASE = 'couple mushroom amount shadow nuclear define like common call crew fortune slice' # correct
+
+CONFIG = {
+    "wrong": {
+        "fingerprint": "56462df8",
+        "SEED_PHRASE": "wrong kite shock primary together system assume sponsor faith virus year guide famous fit later stool awkward mom soon bleak apart render easy pair",
+        "NETWORK": SettingsConstants.MAINNET,
+        "DERIVATION": "m/84h/0h/0h"
+    },
+    
+    "EXAMPLE_FROM": "",
+    "obscure": {
+        "fingerprint": "obscure",
+        "SEED_PHRASE": "obscure bone gas open exotic abuse virus bunker shuffle nasty ship dash",
+        "NETWORK": SettingsConstants.TESTNET,
+        "DERIVATION": "m/48h/1h/0h/2h",
+
+        "XPUB": "xpub6F5dY3kJHzryJ9jg31JBFUuWniawpxLKZNwiUDXohW7fjSVht9uhRimyF1kk6hZS6bqs4c3sPYuSckb6h53jSu2x3czyqxwwyhcw7mAwPey",
+        "DATA_LIST": " \
+            'UR:CRYPTO-ACCOUNT/1-4/LPADAACSKPCYMOMNLGRYHDCKOEADCYSSMECPONAOLYTAADMETAADDLOXAXHDCLAOKSRLNLKPUEGYATHPMNSNIYMUECBY', \
+            'UR:CRYPTO-ACCOUNT/2-4/LPAOAACSKPCYMOMNLGRYHDCKKKGHZMLUZORPVDGUOTECSTTKTOLPCWPTNTLKZTTIZTBEAAHDCXVDTPMYRSTDMOPSCXFZ', \
+            'UR:CRYPTO-ACCOUNT/3-4/LPAXAACSKPCYMOMNLGRYHDCKSPZSBZSPGERLGDATUYNLPYBTGYIYYKBTWTAOSWKSVTSGCHBYDKYAVDAMTAADMONDGDFD', \
+            'UR:CRYPTO-ACCOUNT/4-4/LPAAAACSKPCYMOMNLGRYHDCKDYOTADLOCSDYYKADYKAEYKAOYKAOCYSSMECPONAXAAAYCYIOREKKJKAEAEAEWZWDMYON'  \
+        ",
+        "sparrow_xpub": "xpub"
+    },
+
+    "couple": {
+        "fingerprint": "couple",
+        "SEED_PHRASE": "couple mushroom amount shadow nuclear define like common call crew fortune slice",
+        "NETWORK": SettingsConstants.MAINNET,
+        "DERIVATION": "m/84h/0h/0h",
+
+        "XPUB": "xpub6DBRY8RRnUYBPMTnuVvmiiC2jGMVmeKy4db8ztQL82GwCEMdYGbeJ2w9VH1pGQJVyci45DgkgtFX4Ro6t8JNrfbDprZMBKf4bJVueZNk2to",
+        "DATA_LIST": " \
+            'UR:CRYPTO-ACCOUNT/1-4/LPCFADJKAACSJKCYCHFXSWPFHDCAEMNSPSCEAYFSCNISNELYDLYNHPDLVTTTFTKPLUMKDPTKWEWDLFAXDMFMLEGTSEGOTL', \
+            'UR:CRYPTO-ACCOUNT/2-4/LPCFADJYAACSJKCYCHFXSWPFHDCAWYLONBASLOAEIMFGVDIEGOVSFGHHPYNNHGSTPKTKFRJEZTGMKGFWRYVLTALYHYFMLK', \
+            'UR:CRYPTO-ACCOUNT/3-4/LPCFADKPAACSJKCYCHFXSWPFHDCAGEGDRKEYAXECESHHEYFDGHLDNEPDLNCXHERLRSCFBSHEVTWKBADNSPVAOYJOPDWNRP', \
+            'UR:CRYPTO-ACCOUNT/4-4/LPCFADKOAACSJKCYCHFXSWPFHDCAOEADCYBDDEEETLAOLYTAADMWTAADDLOXAXHDCLAXEMEMBBRFOYHSLSGMKSWMRYMWWN'  \
+        ",
+        "sparrow_xpub": "xpub6F4ZPuwSznDBF86FwVPY2qxNXVGSUNSR8XiYNkGznxdqd9JSaZ6z5iWkErHf1LhxvK9CiHeTwvTajuHQkV4fv5h9uWPGsexGR2qMhUdWKVQ"
+    }
+}
+
+CONF_KEY = 'couple'
+
+
+# SEED_PHRASE = 'wrong kite shock primary together system assume sponsor faith virus year guide famous fit later stool awkward mom soon bleak apart render easy pair'
+# SEED_PHRASE = 'couple mushroom amount shadow nuclear define like common call crew fortune slice' # correct
 # SEED_PHRASE = 'couple mushroom amount shadow nuclear define like common call crew fortune ghif' # 'ghif' not in the dictionary
 # SEED_PHRASE = 'couple mushroom amount shadow nuclear define like common call crew fortune zoo' # Checksum verification failed
 # SEED_PHRASE = 'couple mushroom amount shadow nuclear define like common call crew fortune' # Invalid recovery phrase
@@ -113,8 +160,8 @@ class ExportXpub:
         entry.pack(side='top', anchor="w", padx=10, pady=2)
         try:
             # Prepopulate with seed phrase, if exists
-            if '' != SEED_PHRASE:
-                entry.insert(0, SEED_PHRASE)
+            if '' != CONFIG[CONF_KEY]['SEED_PHRASE']:
+                entry.insert(0, CONFIG[CONF_KEY]['SEED_PHRASE'])
         except NameError:
             pass
         
@@ -137,16 +184,19 @@ class ExportXpub:
 class SeedInitializationError(Exception):
     pass
 
-class XpubQrEncoder():
+class XpubQrEncoder(): # https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/models/encode_qr.py#L358
     def __init__(self, seed_phrase):
-        network: str = SettingsConstants.MAINNET
+        network: str = CONFIG[CONF_KEY]['NETWORK']
+        derivation = CONFIG[CONF_KEY]['DERIVATION']
+
         wordlist_language_code: str = SettingsConstants.WORDLIST_LANGUAGE__ENGLISH
         wordlist = Seed.get_wordlist(wordlist_language_code)
 
-        derivation = 'm/84h/0h/0h'
-
         if wordlist is None:
             raise Exception('Wordlist Required')
+
+        # print(self.derivation)
+        # sys.exit(1)
 
         version = bip32.detect_version(derivation, default="xpub", network=NETWORKS[SettingsConstants.map_network_to_embit(network)])
         
@@ -167,17 +217,21 @@ class XpubQrEncoder():
         self.fingerprint = self.root.child(0).fingerprint
         self.xprv = self.root.derive(derivation)
         self.xpub = self.xprv.to_public()
+
         # Convert xpub to zpub
         self.xpub_base58 = self.xpub.to_string(version=version)
         self.qr_max_fragment_size = 30
 
 
-class UrXpubQrEncoder(XpubQrEncoder):
+class UrXpubQrEncoder(XpubQrEncoder): # https://github.com/SeedSigner/seedsigner/blob/dev/src/seedsigner/models/encode_qr.py#L466
     def __init__(self, seed_phrase):
         super().__init__(seed_phrase)
-        self.derivation = 'm/84h/0h/0h/0h'
+
+        # derivation = "m/84h/0h/0h"
+        derivation = CONFIG[CONF_KEY]['DERIVATION']
 
         # print(seed_phrase)
+        print(self.xpub)
 
         def derivation_to_keypath(path: str) -> list:
             arr = path.split("/")
@@ -197,7 +251,7 @@ class UrXpubQrEncoder(XpubQrEncoder):
 
             return Keypath(arr, self.root.my_fingerprint, len(arr))
 
-        origin = derivation_to_keypath(self.derivation)
+        origin = derivation_to_keypath(derivation)
 
         self.ur_hdkey = HDKey({ 'key': self.xpub.key.serialize(),
             'chain_code': self.xpub.chain_code,
@@ -218,6 +272,8 @@ class UrXpubQrEncoder(XpubQrEncoder):
         for _ in range(loop_total):
             data = ur2_encode.next_part().upper()
             self.data_list.append(data)
+        
+        pprint(self.data_list)
 
         '''
         qr = QR()

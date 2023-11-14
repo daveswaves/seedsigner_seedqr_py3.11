@@ -1,4 +1,6 @@
 '''
+python src/seed_xpub_5address_psbt.py
+
 This script is from Stepan Snigirev's 'Basic usage' script on GitHub:
 https://github.com/diybitcoinhardware/embit/tree/master/docs#basic-usage
 
@@ -7,6 +9,7 @@ Stepan is a quantum physicist, bitcoin hacker from Munich, Germany.
 Generates bip39 seed, converts it to the root key, derives native segwit xpub,
 prints first 5 receiving addresses, parses PSBT transaction and signs it.
 '''
+import sys
 from pprint import pprint
 
 from embit import bip32, bip39
@@ -14,13 +17,21 @@ from embit.psbt import PSBT
 from embit.descriptor import Descriptor
 from binascii import hexlify
 
-
-mnemonic = bip39.mnemonic_from_bytes(b"128 bits is fine")
+MNEMONIC = bip39.mnemonic_from_bytes(b"128 bits is fine")
 # >>> couple mushroom amount shadow nuclear define like common call crew fortune slice
 # print(mnemonic)
 
+'''
+mnemonic = 'wrong kite shock primary together system assume sponsor faith virus year guide famous fit later stool awkward mom soon bleak apart render easy pair'
+derivation = 'm/84h/0h/0h'
+'''
+MNEMONIC = 'obscure bone gas open exotic abuse virus bunker shuffle nasty ship dash'
+DERIVATION = 'm/48h/1h/0h/2h'
+
+print(MNEMONIC)
+
 # Generate root privkey, password can be omitted if you don't want it
-seed = bip39.mnemonic_to_seed(mnemonic)
+seed = bip39.mnemonic_to_seed(MNEMONIC)
 # >>> b'H\xb3\xcb*{\xe7\xd0%\xdc\xa6\x82\x1c6\x1c\x85\xd0>\xed\xb6b.*\x06\x8b"+X1\xea\xa3\xc29x\xa0?\xd5vz\xb3|\xf0v8\x17b&\xc2\x00VJ\t\x11 3*\xa2\x9d\xbc|O\xe5d@\xd3'
 # print(seed)
 root = bip32.HDKey.from_seed(seed)
@@ -28,9 +39,11 @@ root = bip32.HDKey.from_seed(seed)
 # print(root)
 
 # Derive and convert to pubkey
-xpub = root.derive("m/84h/0h/0h").to_public()
+xpub = root.derive(DERIVATION).to_public()
 # >>> xpub6DBRY8RRnUYBPMTnuVvmiiC2jGMVmeKy4db8ztQL82GwCEMdYGbeJ2w9VH1pGQJVyci45DgkgtFX4Ro6t8JNrfbDprZMBKf4bJVueZNk2to
-# print(xpub)
+print(xpub)
+
+sys.exit()
 
 # Generate native segwit descriptors.
 # You can use {0,1} for combined receive and change descriptors
