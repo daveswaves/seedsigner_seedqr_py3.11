@@ -9,6 +9,10 @@ Stepan is a quantum physicist, bitcoin hacker from Munich, Germany.
 Generates bip39 seed, converts it to the root key, derives native segwit xpub,
 prints first 5 receiving addresses, parses PSBT transaction and signs it.
 '''
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2b2bcbf7750a7810a2e3440b1581bbdfb8914c7e
 import sys
 from pprint import pprint
 
