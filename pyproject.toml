@@ -1,12 +1,12 @@
 [tool.poetry]
-name = "test-seedqr"
+name = "seedsigner_seedqr_py3.11"
 version = "0.1.0"
-description = ""
+description = "Uses functionality from the Raspberry Pi Zero SeedSigner project (https://github.com/seedsigner/seedsigner) within a Tk interface."
 authors = ["David A"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.10"
+python = "^3.11"
 pip = "^23.3.1"
 embit = "^0.7.0"
 numpy = "^1.22.4"
@@ -14,7 +14,6 @@ opencv-python = "^4.6.0.66"
 Pillow = "^9.4.0"
 qrcode = "^7.3.1"
 six = "^1.16.0"
-# tk = "^0.1.0"
 
 # Install 'urtypes' & 'pyzbar' packages from GitHub repos
 # ****** MUST BE DONE IN VIRTUAL ENVIRONMENT (poetry shell) ******
